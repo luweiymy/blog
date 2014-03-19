@@ -1,0 +1,17 @@
+.nav i{
+	
+}
+.span3 ul{
+	/*width: 258px;*/
+	border: 1px solid #e5e5e5;
+	/*margin-left: 100px*/
+}
+.bs-docs-sidenav{
+	border-radius: 6px 6px 0px 0px;
+}
+.row{
+	/*margin-top: 80px;*/
+}
+.footer{
+	text-align: center;
+}
