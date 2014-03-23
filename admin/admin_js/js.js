@@ -1,4 +1,3 @@
-
 function getXMLHttpRequest(){
 	var req=false;
 	try{
@@ -19,30 +18,26 @@ function getXMLHttpRequest(){
 	}
 	return req;
 }
-// function getServerTime(){
-// 	var thePage='severtime.php';
-// 	myRand=parseInt(Math.random()*999999999999999);
-// 	var theURL= thePage+"?rand=" + myRand;
-// 	myReq.open("GET",theURL,true);
-// 	myReq.onreadystatechange =  theHTTPResponse;
-// 	myReq.send(null);
-// }
-// function theHTTPResponse(){
-// 	if (myReq.readyState==4) {
-// 		if (myReq.status==200) {
-// 			var timeString=myReq.responseXML.getElementsByTagName("p")[0];
-// 			document.getElementById("showtime").innerHTML=timeString.childNodes[0].nodeValue;
-// 		}
-// 		else{
-// 			alert("0000");
-// 		}
-// 	};
-// }
+function userInfo(){	
+ 	var userName=encodeURI(document.getElementById("userName").value);
+ 	var password=encodeURI(document.getElementById("password").value);
+ 	if (userName==""||password=="") {
+ 		alert("用户名或密码不能为空！");
+ 	}
+ 	else{
+ 		if (userName=="php"&&password=="123") {
+ 			  window.location.href="index.html"	
+ 		}else{
+ 				alert("用户名或者密码填写不正确！");
+ 			}
+ 	};
+ 	
+}
 function postMessage(){	
- 	var theURL= 'message.php';
- 	var name=encodeURI(document.getElementById("inputName").value);
+	var theURL= 'data/userInfo.php';
+ 	var headname=encodeURI(document.getElementById("headName").value);
  	var contents=encodeURI(document.getElementById("inputContent").value);
- 	var params="name="+name+"&"+"contents="+contents;
+ 	var params="headname="+headname+"&"+"contents="+contents;
  	myReq.open("POST",theURL,true);
  	myReq.setRequestHeader("Content-type","application/x-www-form-urlencoded");
  	myReq.setRequestHeader("Content-length",params.length);
@@ -53,9 +48,11 @@ function postMessage(){
 }
 function theHTTPResponse(){
 	if (myReq.readyState==4) {//HTTP 响应已经完全接收。
-		if (myReq.status==200) {
+		if (myReq.status==200) {			
 			var result=myReq.responseText;
-			document.getElementById("showreq").innerHTML=result;
+			window.location.href="../blog.html";
+			alert(document.getElementById("showreq").innerHTML);
+			document.getElementById("showreq").innerHTML=result;alert(result);
 		}else{
 			console.dir(myReq)
 		}
