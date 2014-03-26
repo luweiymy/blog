@@ -15,3 +15,13 @@
 .footer{
 	text-align: center;
 }
+.displaybox{
+	width:  auto;
+	height: 800px;
+	background-color: #fff;
+	border: 2px solid;
+}
+td span{
+	color: #adadad;
+	font-size:12px; 
+}

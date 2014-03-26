@@ -1,0 +1,27 @@
+*{margin: 0px;padding: 0px;}
+.navbar-example{
+	width: auto;
+	height: 50px;
+	background-color:#4B0082;
+}
+.nav-tabs{
+    color: white;
+}
+.nav-tabs a{
+    color: #C1CDC1;
+    text-decoration: none;
+}
+.nav-tabs a:hover{
+    color: white;
+
+}
+ul{
+	margin-left: 50px;
+}
+li{
+	list-style: none;
+	float: left;
+	font-size: 24px;
+	margin-left: 50px;
+	margin-top: 10px;
+}
