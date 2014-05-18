@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>浏览器兼容性</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"><!--启动响应式-->	
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap-responsive.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/mycss.css">
+	<script src="http://code.jquery.com/jquery-1.8.1.js"></script>	
+</head>
+<body data-spy="scroll" data-target=".bs-doc-sidebar">
+	<!--导航-->
+	<div class="container">
+		<div class="navbar navbar-inverse">
+		  	<div class="navbar-inner">
+			    <div class="container">
+			      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+			        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+			      	</a>
+			 
+			        <!-- Be sure to leave the brand out there if you want it shown -->
+			        <a class="brand" href="#">雅博</a>
+			 
+			        <!-- Everything you want hidden at 940px or less, place within here -->
+			      	<div class="nav-collapse collapse">
+			        <!-- .nav, .navbar-search, .navbar-form, etc -->
+			        	<ul class="nav" >
+				      		<li class="active"><a href="#">首页</a></li>
+				    		<li><a href="blog.html">每日一博</a></li>
+				      		<li><a href="experience.html">小小经验</a></li>
+				      		<li><a href="message.html">留言</a></li>
+				      		<li><a href="aboutme.html">关于我</a></li>
+				   		</ul>
+				   		
+			      	</div>
+			    </div>
+		  	</div>
+		</div>
+		  <!--内容-->
+		<div class="row">
+			<div class="container-fluid">
+				<div class="row">
+				   <div class="span8 offset2" >
+				   	<h4>浏览器兼容解决方法</h4>
+				   	<p>问题一：png图片在IE6中透明的问题解决方法</p>
+				   	<p>解决方案：（1）引用htc文件：首先从http://www.twinhelix.com/css/iepngfix/下载 iepngfix.zip(直接点击下载，如果链接还有效的话)，解压后里面有个实例效果可以看看。想测试IE6的话，用IETESTER貌似不管用，我用的虚拟机中XP的IE6。</p>
+				   	<p>其中有3重要的文件：</p>
+				   	<p>blank.gif(此文件貌似是解决用IMG标签插入PNG图像时产生的1像素偏移的bug。)</p>
+				   	<p>iepngfix.htc    (这个文件是让IE6支持PNG-24透明的关键)</p>
+			   		<p>iepngfix_tilebg.js   (此脚本是用来解决用PNG作为背景时，不能用Position定位和repeat的问题。)</p>
+			   		<p>使用方法：</p>
+			   		<p>一、将blank.gif 、iepngfix.htc、iepngfix_tilebg.js分别拷贝进你想要的文件夹内，以我的为例：images/blank.gif  、js/iepngfix.htc  、js/iepngfix_tilebg.js  。</p>
+			   		<p>二、然后，这里需要更改唯一个需要配置的文件，用记事本或其他软件打开iepngfix.htc，找到IEPNGFix.blankImg = thisFolder + ‘blank.gif’; 这句代码，并修改blank.gif图片地址，以我的为例：</p>
+			   		<p>IEPNGFix.blankImg = ‘images/blank.gif’;</p>
+			   		<p如果需要这样写，请把前面的thisFolder + 加上，就变成它的相对路径了。)></p>
+			   		<p>三、在需要hack的html页面文件中<head></head>部分加入</p>
+			   		<p><script src=”js/iepngfix_tilebg.js” type=”text/javascript” ></script></p>
+			   		<p>四、至此，你就可以在你的css文件中添加全局属性* {behavior: url(“js/iepngfix.htc”);} (注意：htc文件路径同样是以html文档的位置为根目录)，不过这样写总让人感觉会增加服务器负荷及响应时间。建议指定元素拥有该属性，如：
+div,input,img {behavior: url(“styles/iepngfix.htc”);}</p>
+			   		<p>如果需要使用hack的元素不多，建议直接单独写在该元素的css样式内，如：
+#header { width:960px; height:50px; background:url(images/bg.png) no-repeat 0 0; behavior: url(“styles/iepngfix.htc”);}
+优化：为了使hack有针对性的调用，应该为IE6单独写一份CSS文件，并在html文档head部分用判断语句来选择性调用ie6的CSS及js文件，如：</p>
+			   		<p>1</p>
+			   		<p>2</p>
+			   		<p>3</p>
+			   		<p>4  &lt;!--[if lte IE 6]></p>
+			   		<p>&lt;link href="styles/ie6.css" type="text/css" rel="stylesheet" /></p>
+			   		<p>&lt;script type="text/javascript" src="js/iepngfix_tilebg.js">&lt;/script></p>
+			   		<p>&lt;![endif]-->;</p>
+			   		<p>虽然解决一上问题还可以有js的方法，但是我自己用着htc这个文件比较好用，所以推荐给大家！</p>
+			   		<p>问题二：margin在IE6中显示两倍的间距</p>
+			   		<p>解决方案：在相应的div中设置css属性 display：inline便可以解决</p>
+	
+				   	<p>注意：浏览器之间还有很多兼容性的问题，以后我会一一补全！</p>
+				   </div>
+	  			</div>
+			</div>
+		</div>
+	
+	<!-- </div> -->
+<!--页脚部分-->
+		<hr/>
+		<div class="footer">mengyayang&copy;Company 2014</div>
+	</div>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="js/bootstrap-modal.js"></script> -->
+</body>
+</html>

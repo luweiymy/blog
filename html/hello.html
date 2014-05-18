@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>hello world</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"><!--启动响应式-->	
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap-responsive.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/mycss.css">
+	<script src="http://code.jquery.com/jquery-1.8.1.js"></script>	
+</head>
+<body data-spy="scroll" data-target=".bs-doc-sidebar">
+	<!--导航-->
+	<div class="container">
+		<div class="navbar navbar-inverse">
+		  	<div class="navbar-inner">
+			    <div class="container">
+			      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+			        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+			      	</a>
+			 
+			        <!-- Be sure to leave the brand out there if you want it shown -->
+			        <a class="brand" href="#">雅博</a>
+			 
+			        <!-- Everything you want hidden at 940px or less, place within here -->
+			      	<div class="nav-collapse collapse">
+			        <!-- .nav, .navbar-search, .navbar-form, etc -->
+			        	<ul class="nav" >
+				      		<li class="active"><a href="#">首页</a></li>
+				    		<li><a href="blog.html">每日一博</a></li>
+				      		<li><a href="experience.html">小小经验</a></li>
+				      		<li><a href="message.html">留言</a></li>
+				      		<li><a href="aboutme.html">关于我</a></li>
+				   		</ul>
+				   		
+			      	</div>
+			    </div>
+		  	</div>
+		</div>
+		  <!--内容-->
+		<div class="row">
+			<div class="container-fluid">
+				<div class="row">
+				   <div class="span8 offset2" >
+				   	<h4>HTML小例:hello world!</h4>
+				   	<p>首先，按照标准写第一句<span>“&lt;!DOCTYPE html&gt;”(不管是刚接触前端，还是你已经“精通”web前端开发的内容，你应该知道在你写html的时候需要定义文档类型；你知道如果没有它，浏览器在渲染页面的时候会使用怪异模式)</span></p>
+				   	<p>接着，由于我们写的是个网页，所以用到的是html，来吧，紧接上一句我们写上“&lt;html >&lt; /html&gt;”两个标签，正如我们人的整个的身体。</p>
+				   	<p>然后，正如人拥有头，身体，脚一样，我们把网页也分成 “&lt;head&gt; 头&lt;/head&gt;” “&lt; body&gt; 身体&lt;/body&gt;” 头部就像人的脑袋学习一样可以引入其他的东西，复杂的先不说，先看简单的，“&lt;title&gt;&lt; /title&gt;”是head中有的东西，它显示在标签页上，就像人的名字一样。所以做网页的时候，我们要为自己的网页起一个好听的名字。好了，看body中显示的就是内容了，是可以显示我们想要的 hello world.</p>
+				   	<p>话不多说，呈上新鲜的“栗子”</p>
+				   	<pre>
+				   	&lt;!DOCTYPE html&gt;
+				   		&lt;html&gt;
+				   		&nbsp;&nbsp;&lt;head&gt;
+				   		&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;hello world&lt;/title&gt;
+				   		&nbsp;&nbsp;&lt;/head&gt;
+				   		&nbsp;&nbsp;&lt;body&gt;
+				   		&nbsp;&nbsp;&nbsp;&nbsp;hello world!
+				   		&nbsp;&nbsp;&lt;/body&gt;
+				   		&lt;/html&gt;
+				   	</pre>
+				   	<p>注意：在写代码的时候，一定要注意缩进，养成良好的习惯！</p>
+				   </div>
+	  			</div>
+			</div>
+		</div>
+	
+	<!-- </div> -->
+<!--页脚部分-->
+		<hr/>
+		<div class="footer">mengyayang&copy;Company 2014</div>
+	</div>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="js/bootstrap-modal.js"></script> -->
+</body>
+</html>

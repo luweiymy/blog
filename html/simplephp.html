@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>简单php样例</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"><!--启动响应式-->	
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap-responsive.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/mycss.css">
+	<script src="http://code.jquery.com/jquery-1.8.1.js"></script>	
+</head>
+<body data-spy="scroll" data-target=".bs-doc-sidebar">
+	<!--导航-->
+	<div class="container">
+		<div class="navbar navbar-inverse">
+		  	<div class="navbar-inner">
+			    <div class="container">
+			      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+			        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+			      	</a>
+			 
+			        <!-- Be sure to leave the brand out there if you want it shown -->
+			        <a class="brand" href="#">雅博</a>
+			 
+			        <!-- Everything you want hidden at 940px or less, place within here -->
+			      	<div class="nav-collapse collapse">
+			        <!-- .nav, .navbar-search, .navbar-form, etc -->
+			        	<ul class="nav" >
+				      		<li class="active"><a href="#">首页</a></li>
+				    		<li><a href="blog.html">每日一博</a></li>
+				      		<li><a href="experience.html">小小经验</a></li>
+				      		<li><a href="message.html">留言</a></li>
+				      		<li><a href="aboutme.html">关于我</a></li>
+				   		</ul>
+				   		
+			      	</div>
+			    </div>
+		  	</div>
+		</div>
+		  <!--内容-->
+		<div class="row">
+			<div class="container-fluid">
+				<div class="row">
+				   <div class="span8 offset2" >
+				   	<h4>php最简单小例</h4>
+				   	<p>php最简单的例子，其实就是再浏览器上输出字符串，正如下边的小例子在浏览器上输出“hello world”，非常简单实现，小栗子如下：</p>
+				   	<p>&lt;?php</p>
+				   	<p>&nbsp;&nbsp;echo:"hello world"</p>
+				   	<p>?></p>
+				   
+				   	<p>上边的代码执行后，就会在浏览器上显示“hello world”这几个字，字号和h1是一样的。</p>
+				   	<p>注意：代码的缩进！</p>
+				   </div>
+	  			</div>
+			</div>
+		</div>
+	
+	<!-- </div> -->
+<!--页脚部分-->
+		<hr/>
+		<div class="footer">mengyayang&copy;Company 2014</div>
+	</div>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="js/bootstrap-modal.js"></script> -->
+</body>
+</html>

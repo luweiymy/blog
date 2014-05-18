@@ -15,3 +15,41 @@
 .footer{
 	text-align: center;
 }
+.displaybox{
+	width:  auto;
+	height: 800px;
+	background-color: #fff;
+	border: 2px solid;
+}
+#marrow li{
+	line-height: 30px;
+	letter-spacing: 2px;
+	/*list-style: none;*/
+}
+.para{
+	border: 1px solid  	#d6d6d6;
+	border-radius: 10px;
+	font-size: 12px;
+	line-height: 20px;
+	letter-spacing: 1px;
+	padding: 10px;
+	background-color: #f2f2f2;
+	margin-bottom: 10px;
+}
+td span{
+	color: #adadad;
+	font-size:12px; 
+}
+p{
+	text-indent: 30px;
+}
+h4{
+	text-align: center;
+}
+pre {
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
+}
