@@ -18,6 +18,7 @@ function getXMLHttpRequest(){
 	}
 	return req;
 }
+
 function getMessage(){
 	var theURL='data/sqlid.php';
 	myReq.open("GET",theURL,true);

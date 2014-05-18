@@ -6,8 +6,7 @@
 	$query="select * from blog";
 	$result=mysql_query($query);
 	echo "<table>";
-	while ($rs=mysql_fetch_object($result)) {
-		
+	while ($rs=mysql_fetch_object($result)) {		
 		echo "<tr>";
 		echo "<td> 标题：".$rs->headname."</td><br/>";
 		echo "<td>内容：".$rs->contents."</td><br/>";

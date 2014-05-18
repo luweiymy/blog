@@ -32,7 +32,6 @@ function postMessage(){
  	myReq.onreadystatechange=theHTTPResponse;
  	myReq.send(params);
  	return false;
-
 }
 function theHTTPResponse(){
 	if (myReq.readyState==4) {//HTTP 响应已经完全接收。
