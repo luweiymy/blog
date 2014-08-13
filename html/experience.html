@@ -55,6 +55,7 @@
 						  	<li class><a href="#js">&nbsp;&nbsp;j s <i class="icon-chevron-right"></i></a></li>
 						  	<li class><a href="#php"> php <i class="icon-chevron-right"></i></a></li>
 						  	<li class><a href="#extjs">extjs<i class="icon-chevron-right"></i></a></li>
+						  	<li class><a href="#other">other<i class="icon-chevron-right"></i></a></li>
 						  	<!-- <li class="divider"></li> -->
 						</ul>
 					
@@ -117,6 +118,39 @@
 				    		<p>sdsssdsdssdssdsd</p>
 				    		<p>sdsssdsdssdssdsd</p>
 				    		<p>sdsssdsdssdssdsd</p>
+				    	</div>
+				    	<div id="other" >
+				    		<h4>win8.1下IIS第一次打开是出现代码为 0x80070021 的“HTTP 错误 500.19”错误</h4>
+				    		<p>1、打开web.cofig文件</p>
+				    		<p>2、如果你的代码是
+<pre>
+&lt;system.webServer&gt;
+    &lt;handlers accessPolicy="Read, Execute, Script"&gt;
+        &lt;remove name="ISAPI-dll" /&gt;
+        &lt;add name="ISAPI-dll" path="*.dll" verb="GET,HEAD,POST,TRACE" modules="IsapiModule" scriptProcessor="C:\Windows\System32\inetsrv\asp.dll" resourceType="File" requireAccess="Execute" allowPathInfo="true" preCondition="bitness64" /&gt;
+    &lt;/handlers&gt;
+&lt;/system.webServer&gt;
+</pre>
+				    		</p>
+				    		<p>
+				    			3、将上边的代码改成：
+<pre>
+&lt;system.webServer&gt;
+    	&lt;security&gt;
+	      	&lt;authentication&gt;
+	        	&lt;windowsAuthentication&gt;
+			        &lt;handlers accessPolicy="Read, Execute, Script"&gt;
+			            &lt;remove name="ISAPI-dll" /&gt;
+			            &lt;add name="ISAPI-dll" path="*.dll" verb="GET,HEAD,POST,TRACE" modules="IsapiModule" scriptProcessor="C:\Windows\System32\inetsrv\asp.dll" resourceType="File" requireAccess="Execute" allowPathInfo="true" preCondition="bitness64" /&gt;
+			        &lt;/handlers>
+			   	&lt;/windowsAuthentication&gt;
+     		&lt;/authentication&gt;
+    	&lt;/security&gt;
+    &lt;/system.webServer&gt;
+</pre>
+				    		</p>
+				    		<p>4、上边的详细解决方案可以看
+				    		<a href="http://www.iis.net/learn/get-started/planning-for-security/how-to-use-locking-in-iis-configuration">http://www.iis.net/learn/get-started/planning-for-security/how-to-use-locking-in-iis-configuration</a>上的英文文档，其解决的过程为解锁的过程</p>
 				    	</div>
 				    </div>
 	  			</div>
