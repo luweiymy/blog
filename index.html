@@ -4,18 +4,18 @@
 	<meta charset="utf-8">
 	<title>index</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"><!--启动响应式-->	
-	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css"><!--启动响应式-->	
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/mycss.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<script src="http://code.jquery.com/jquery-1.8.1.js"></script>	
 	<script type="text/javascript" >
-	$(document).ready(function(){
-		$('#myTab a').click(function (e) {
-	 	e.preventDefault();
-	 	$(this).tab('show');
-	 	// alert("000");
+		$(document).ready(function(){
+			$('#myTab a').click(function (e) {
+			 	e.preventDefault();
+			 	$(this).tab('show');
+				})
 		})
-	})
 	</script>
 </head>
 
@@ -70,45 +70,44 @@
 							<div class="tab-pane active" id="index">
 								<div class="hero-unit">
 								    <h1>杨梦雅的博客</h1>
-								  	<p>前端开发菜鸟</p>
-								 	<p>
-										<a href="aboutme.html" class="btn btn-primary btn-large">
-								      		了解我
+								    
+								  	  	<p>每天记录下自己所学所想，当某一天翻阅时候，会让自己大吃一惊的时候，说明自己已经积累了一些东西，每天记着学一点。。。</p>
+								 		<blockquote>
+								 			<small>前端小菜鸟</small>
+								 		</blockquote >
+										<a href="html/aboutme.html" >
+								      		<button class="btn btn-large btn-primary">了解我</button>
 								   	 	</a>
 							  		</p>
 								</div>
-								<div class="span4">
-									<h3>前端经验</h3>
-									<p>html...</p>
-									<button class="btn-primary">view<i class="icon-chevron-right icon-white"></i></button>
+								<div class="span4 offset1">
+									<h3>网页入门小例</h3>
+									<!-- <p>hello world</p> -->
+									<div class="para">首先，按照标准写第一句“< !DOCTYPE html >”(不管是刚接触前端，还是你已经“精通”web前端开发...</div>
+									<a href="html/hello.html"><button class="btn btn-primary">了解详情</button></a>
 								</div>
-								<div class="span4">
-									<h3>Thumbnail label</h3>
-									<p>Thumbnail caption...</p>
-									<button class="btn-primary">view<i class="icon-chevron-right icon-white"></i></button>
+								<div class="span4 offset1">
+									<h3>浏览器兼容问题</h3>
+									<div class="para">问题一：png图片在IE6中透明的问题解决方法.解决方案：（1）引用htc文件：首先从http://www.twinhelix.com...</div>		
+									<a href="html/compatible.html"><button class="btn btn-primary">了解详情<i class="icon-chevron-right icon-white"></i></button></a>
 								</div>
-								<div class="span4">
-									<h3>Thumbnail label</h3>
-									<p>Thumbnail caption...</p>
-									<button class="btn-primary">view<i class="icon-chevron-right icon-white"></i></button>
+								<div class="span4 offset1">
+									<h3>js最简单入门小例</h3>
+									<div class="para">js最简单的例子，其中注意的是script标签的放置位置，js可以放在body中也可以放在head中,也可以放在...</div>
+									<a href="html/simplejs.html"><button class="btn btn-primary">了解详情<i class="icon-chevron-right icon-white"></i></button></a>
 								</div>
-								<div class="span4">
-									<h3>Thumbnail label</h3>
-									<p>Thumbnail caption...</p>
-									<button class="btn-primary">view<i class="icon-chevron-right icon-white"></i></button>
+								<div class="span4 offset1">
+									<h3>php最简单的小例</h3>
+									<div class="para">php最简单的例子，就是浏览器上输出字符串，正如下边的小例子在浏览器上输出“hello world”，非常简单实现，小栗子...</div>
+									<a href="html/simplephp.html"><button class="btn btn-primary">了解详情<i class="icon-chevron-right icon-white"></i></button></a>
 								</div>
 							</div>
 							<div class="tab-pane" id="marrow">
 								<ul>
-									<li><a>11111的帖子</a></li>
-									<li><a>11111的帖子</a></li>
-									<li><a>11111的帖子</a></li>
-									<li><a>11111的帖子</a></li>
-									<li><a>11111的帖子</a></li>
-									<li><a>11111的帖子</a></li>
-									<li><a>11111的帖子</a></li>
-									<li><a>11111的帖子</a></li>
-
+									<li><a href="html/hello.html">网页入门小例</a></li>
+									<li><a href="html/compatible">浏览器兼容问题</a></li>
+									<li><a href="html/simplejs.html">js最简单入门小例</a></li>
+									<li><a href="html/simplephp.html">php最简单的小例</a></li>
 								</ul>								
 							</div>
 						</div>
@@ -116,13 +115,16 @@
 	  			</div>
 			</div>
 		</div>
-	
-	<!-- </div> -->
-<!--页脚部分-->
-		<hr/>
-		<div class="footer">mengyayang&copy;Company 2014</div>
 	</div>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<!-- <script type="text/javascript" src="js/bootstrap-modal.js"></script> -->
+	<!--页脚部分-->
+	<div class="footer"></div>
 </body>
 </html>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){ 
+		// $(".top").load("top.html"); 
+		$(".footer").load("html/common/footer.html"); 
+	}); 
+</script>
+<script type="text/javascript" src="myjs/footer.js"></script>
