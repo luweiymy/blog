@@ -1,11 +1,6 @@
 <?php  //向数据库中插入数据
 	header("Content-type:text/html;charset=utf-8");
 	require "key.php";
-	if (!isset($_SESSION)) {
-		# code...
-		session_start();
-	};
-
 	$id=$_POST['id'];
 	$name=$_POST['name'];
 	$contents=$_POST['contents'];
@@ -14,13 +9,5 @@
 	mysql_select_db("blog");
 	$query="insert into message (name,contents,time) values('".$name."','".$contents."','".$time."')";
 	$result=mysql_query($query);
-	// if ($result>0) {
-	// 	# code...
-	// 	echo "s";
-	// }
-	// else {
-	// 	# code...
-	// 	echo "f";
-	// }
 	require "show_message.php";
 ?>
