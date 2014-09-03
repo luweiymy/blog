@@ -20,10 +20,10 @@ function getXMLHttpRequest(){
 }
 
 function getMessage(){
-	var theURL='data/sqlid.php';
+	var theURL='../data/sqlid.php';
 	myReq.open("GET",theURL,true);
 	myReq.onreadystatechange=theHTTPResponse;
-	send(null);
+	myReq.send(null);
 }
 function userInfo(){	
  	var userName=encodeURI(document.getElementById("userName").value);
@@ -41,7 +41,7 @@ function userInfo(){
  	
 }
 function postMessage(){	
-	var theURL= 'data/userInfo.php';
+	var theURL= '../data/userInfo.php';
  	var headname=encodeURI(document.getElementById("headName").value);
  	var contents=encodeURI(document.getElementById("inputContent").value);
  	var params="headname="+headname+"&"+"contents="+contents;
