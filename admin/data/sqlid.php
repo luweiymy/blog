@@ -2,7 +2,6 @@
 	header("Content-type:text/html;charset=utf-8");
 	require "../../data/key.php";
 	if (!isset($_SESSION)) {
-		# code...
 		session_start();
 	};
 	$headname=$_POST['headname'];
