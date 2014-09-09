@@ -10,6 +10,10 @@ hr{
 	margin-top: 4px;
 	margin-left: 8px;
 }
+/*首页列表的颜色*/
+.listfont{
+	color: #797979
+}
 /*页脚的样式*/
 .footer{
 	margin-top: 32px;
