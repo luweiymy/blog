@@ -68,22 +68,3 @@ function theHttpResponse(){
 		}
 	};
 }
-
-//每日一搏中读取数据库的数据
-function getBlog(){
-	var theURL= '../data/showBlog.php';
-	myReq.open("GET",theURL,true);
-	myReq.onreadystatechange=responseText;//theHTTPResponse函数的重用
-	myReq.send(null);
-}
-function responseText(){
-	if (myReq.readyState==4) {//HTTP 响应已经完全接收。
-		if (myReq.status==200) {
-			var result=myReq.responseText;
-			document.getElementById("showreq").innerHTML=result;
-
-		}else{
-			console.dir(myReq)
-		}
-	};
-}
