@@ -21,10 +21,14 @@ function getXMLHttpRequest(){
 // 留言板向数据库插入数据
 function postMessage(){	
  	var theURL= '../data/message.php';
+ 	var inputName=document.getElementById("inputName").value;
+ 	var inputContent=document.getElementById("inputContent").value;
+ 	if (inputName==''||inputContent=='') {
+ 		alert("评价的昵称和留言的内容不能为空的哦！");
+ 	};
  	var id=encodeURI(document.getElementById("id").value);
- 	var name=encodeURI(document.getElementById("inputName").value);
- 	console.log(name);
- 	var contents=encodeURI(document.getElementById("inputContent").value);
+ 	var name=encodeURI(inputName);
+ 	var contents=encodeURI(inputContent);
  	var params="id="+id+"&"+"name="+name+"&"+"contents="+contents;
  	myReq.open("POST",theURL,true);
  	myReq.setRequestHeader("Content-type","application/x-www-form-urlencoded");
