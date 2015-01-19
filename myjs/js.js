@@ -19,25 +19,37 @@ function getXMLHttpRequest(){
 	return req;
 }
 // 留言板向数据库插入数据
-function postMessage(){	
- 	var theURL= '../data/message.php';
- 	var inputName=document.getElementById("inputName").value;
- 	var inputContent=document.getElementById("inputContent").value;
- 	if (inputName==''||inputContent=='') {
- 		alert("评价的昵称和留言的内容不能为空的哦！");
- 	};
- 	var id=encodeURI(document.getElementById("id").value);
- 	var name=encodeURI(inputName);
- 	var contents=encodeURI(inputContent);
- 	var params="id="+id+"&"+"name="+name+"&"+"contents="+contents;
- 	myReq.open("POST",theURL,true);
- 	myReq.setRequestHeader("Content-type","application/x-www-form-urlencoded");
- 	myReq.setRequestHeader("Content-length",params.length);
- 	myReq.setRequestHeader("Connection","close");
- 	myReq.onreadystatechange=theHTTPResponse;
- 	myReq.send(params);
- 	return false;
-}
+// function postMessage(){	
+//  	var theURL= '../data/message.php';
+//  	var inputName=document.getElementById("inputName").value;
+//  	var inputContent=document.getElementById("inputContent").value;
+//  	if (inputName==''||inputContent=='') {
+//  		alert("评价的昵称和留言的内容不能为空的哦！");
+//  	};
+//  	var id=encodeURI(document.getElementById("id").value);
+//  	var name=encodeURI(inputName);
+//  	var contents=encodeURI(inputContent);
+//  	var params="id="+id+"&"+"name="+name+"&"+"contents="+contents;
+//  	myReq.open("POST",theURL,true);
+//  	myReq.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+//  	myReq.setRequestHeader("Content-length",params.length);
+//  	myReq.setRequestHeader("Connection","close");
+//  	myReq.onreadystatechange=theHTTPResponse;
+//  	myReq.send(params);
+//  	return false;
+// }
+$("#submit").click(function(){
+	var inputName=$("#inputName").val();
+ 	var inputContent=$("#inputContent").val();
+	$.ajax({
+		url:'../data/message.php',
+		type:'POST',
+		data:{name:inputName,contents:inputContent},
+		success:function(data, textStatus){
+		 	$("#submit").submit();
+		}
+	});
+});
 function theHTTPResponse(){
 	if (myReq.readyState==4) {//HTTP 响应已经完全接收。
 		if (myReq.status==200) {
@@ -56,7 +68,7 @@ function pagination(page){
 		return;
 	};
 	var theURL= '../data/Pagination.php';
-	theURL+="?page="+page+"&id"+Math.random();
+	theURL+="?page="+page+"&id="+Math.random();
 	myReq.open("GET",theURL,true);
 	myReq.onreadystatechange=theHttpResponse;
 	myReq.send(null);
@@ -64,8 +76,10 @@ function pagination(page){
 }
 function theHttpResponse(){
 	if (myReq.readyState==4) {//HTTP 响应已经完全接收。
+		console.log(myReq.status);
 		if (myReq.status==200) {
 			var result=myReq.responseText;
+			console.log(result);
 			document.getElementById("pagination").innerHTML=result;
 		}else{
 			console.dir(myReq)
