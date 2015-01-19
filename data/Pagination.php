@@ -19,8 +19,8 @@
 		echo "</table>";
 		$num=mysql_num_rows(mysql_query("select * from message"));
 		$pagenum=@ceil($num/$pagesize);
-		// echo $num;//总的记录数
-		// echo $pagenum;//总的页数
+		echo $num;//总的记录数
+		echo $pagenum;//总的页数
 		$str="";
 		for ($i=1; $i < $pagenum+1; $i++) { 
 		// # code...
