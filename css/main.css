@@ -17,6 +17,7 @@ hr{
 /*页脚的样式*/
 .footer{
 	margin-top: 32px;
+	background-color: #ebebeb;
 }
 .footercon{
 	background-color: #dfdfdf;
@@ -26,5 +27,5 @@ hr{
 	margin-top: 20px;
 	font-size: 12px;
 	color: #595959;
-	background-color: #ebebeb
+
 }
