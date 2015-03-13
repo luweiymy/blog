@@ -107,3 +107,8 @@ pre {
 .row-fluid .hotcolumn{
 	
 }
+/*个人资料板块的样式*/
+.btngroup .messageblink{
+	text-decoration: none;
+	color: #fff;
+}
