@@ -11,11 +11,13 @@
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap-markdown.min.css" media="screen and (min-width: 400px)">
 	<link rel="stylesheet/less" type="text/css" href="../less/bootstrap-markdown.less">
-	<script src="../js/jquery-2.1.1.js"></script>	
+	<script src="../js/jquery.js" type="text/javascript"></script>	
 	<script src="../myjs/js.js" type="text/javascript"></script>
 	<script type="text/javascript" src="../js/bootstrap-markdown.js"></script>
 	<script type="text/javascript" src="../js/marked.js"></script>
 	<script type="text/javascript" src="../js/to-markdown.js"></script>
+	 <!-- <script src="../myjs/jquery/common.js" type="text/javascript"></script> -->
+	 <script type="text/javascript"></script>
 	<script type="text/javascript">
 		var myReq = getXMLHttpRequest();
 		pagination(1);
@@ -90,9 +92,7 @@
 								</div>
 								<div class="control-group">
 								    <div class="controls">
-								      <button type="submit" class="btn" id="submit">
-								      	提交
-								      </button>
+								      <button type="button" id="messagesubmit" class="btn">提交</button>
 								    </div>
 								</div>
 							</form>
