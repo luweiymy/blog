@@ -38,29 +38,30 @@ function getXMLHttpRequest(){
 //  	myReq.send(params);
 //  	return false;
 // }
-$("#submit").click(function(){
-	var inputName=$("#inputName").val();
- 	var inputContent=$("#inputContent").val();
-	$.ajax({
-		url:'../data/message.php',
-		type:'POST',
-		data:{name:inputName,contents:inputContent},
-		success:function(data, textStatus){
-		 	$("#submit").submit();
-		}
-	});
+$("#messagesubmit").click(function(){
+	// var inputName=$("#inputName").val();
+	// var inputContent=$("#inputContent").val();
+	// $.ajax({
+	// 	url:'../data/message.php',
+	// 	type:'POST',
+	// 	data:{name:inputName,contents:inputContent},
+	// 	success:function(data, textStatus){
+	// 	 	$("#messagesubmit").submit();
+	// 	}
+	// });
+// alert(0)
 });
-function theHTTPResponse(){
-	if (myReq.readyState==4) {//HTTP 响应已经完全接收。
-		if (myReq.status==200) {
-			var result=myReq.responseText;
-			window.location.reload();
-			document.getElementById("showreq").innerHTML=result;
-		}else{
-			console.dir(myReq)
-		}
-	};
-}
+// function theHTTPResponse(){
+// 	if (myReq.readyState==4) {//HTTP 响应已经完全接收。
+// 		if (myReq.status==200) {
+// 			var result=myReq.responseText;
+// 			window.location.reload();
+// 			document.getElementById("showreq").innerHTML=result;
+// 		}else{
+// 			console.dir(myReq)
+// 		}
+// 	};
+// }
 
 //分页函数
 function pagination(page){
@@ -76,10 +77,10 @@ function pagination(page){
 }
 function theHttpResponse(){
 	if (myReq.readyState==4) {//HTTP 响应已经完全接收。
-		console.log(myReq.status);
+		// console.log(myReq.status);
 		if (myReq.status==200) {
 			var result=myReq.responseText;
-			console.log(result);
+			// console.log(result);
 			document.getElementById("pagination").innerHTML=result;
 		}else{
 			console.dir(myReq)
