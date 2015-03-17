@@ -32,31 +32,16 @@ function getXMLHttpRequest(){
 //  	var params="id="+id+"&"+"name="+name+"&"+"contents="+contents;
 //  	myReq.open("POST",theURL,true);
 //  	myReq.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-//  	myReq.setRequestHeader("Content-length",params.length);
-//  	myReq.setRequestHeader("Connection","close");
 //  	myReq.onreadystatechange=theHTTPResponse;
 //  	myReq.send(params);
 //  	return false;
 // }
-$("#messagesubmit").click(function(){
-	// var inputName=$("#inputName").val();
-	// var inputContent=$("#inputContent").val();
-	// $.ajax({
-	// 	url:'../data/message.php',
-	// 	type:'POST',
-	// 	data:{name:inputName,contents:inputContent},
-	// 	success:function(data, textStatus){
-	// 	 	$("#messagesubmit").submit();
-	// 	}
-	// });
-// alert(0)
-});
 // function theHTTPResponse(){
 // 	if (myReq.readyState==4) {//HTTP 响应已经完全接收。
 // 		if (myReq.status==200) {
-// 			var result=myReq.responseText;
-// 			window.location.reload();
+// 			var result=myReq.responseText;			
 // 			document.getElementById("showreq").innerHTML=result;
+// 			// window.location.reload();
 // 		}else{
 // 			console.dir(myReq)
 // 		}
@@ -77,13 +62,12 @@ function pagination(page){
 }
 function theHttpResponse(){
 	if (myReq.readyState==4) {//HTTP 响应已经完全接收。
-		// console.log(myReq.status);
 		if (myReq.status==200) {
 			var result=myReq.responseText;
-			// console.log(result);
 			document.getElementById("pagination").innerHTML=result;
 		}else{
 			console.dir(myReq)
 		}
 	};
 }
+
