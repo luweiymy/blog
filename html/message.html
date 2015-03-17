@@ -16,15 +16,14 @@
 	<script type="text/javascript" src="../js/bootstrap-markdown.js"></script>
 	<script type="text/javascript" src="../js/marked.js"></script>
 	<script type="text/javascript" src="../js/to-markdown.js"></script>
-	 <!-- <script src="../myjs/jquery/common.js" type="text/javascript"></script> -->
-	 <script type="text/javascript"></script>
+	<script type="text/javascript" src="../myjs/jquery/common.js"></script>
 	<script type="text/javascript">
 		var myReq = getXMLHttpRequest();
 		pagination(1);
 	</script>
 </head>
 
-<body data-spy="scroll" data-target=".bs-doc-sidebar" 	>
+<body data-spy="scroll" data-target=".bs-doc-sidebar">
 	
 	<div class="container">
 		<!--导航-->
@@ -61,11 +60,14 @@
 				<div class="row-fluid">
 				    <div class="span3 bs-docs-sidebar">
 				      <!--Sidebar content-->
-					
 				    </div>
 				    <div class="span9">
 				      <!--Body content-->
 				      	<!--留言部分-->
+				      	<div class="showcontent" id="showreq">
+				      		这里是留言信息
+				      	</div>
+				      	<!-- 翻页部分 -->
 				        <div id="pagination" class="pagination">
 				        	
 				        </div>
@@ -92,7 +94,7 @@
 								</div>
 								<div class="control-group">
 								    <div class="controls">
-								      <button type="button" id="messagesubmit" class="btn">提交</button>
+								      <div type="button" id="messagesubmit" class="btn" onclick="postMessage()">提交</div>
 								    </div>
 								</div>
 							</form>
